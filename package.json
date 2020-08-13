@@ -5,9 +5,16 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "tsc": "tsc",
+    "tsec": "./tsec/bin/tsec -p tsconfig.json | grep 'TS21228'",
+    "eslint": "eslint './**/*.ts' './**/*.tsx'"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.0",
+    "eslint": "^7.6.0",
+    "eslint-plugin-no-unsanitized": "^3.1.2",
+    "eslint-plugin-react": "^7.20.6",
     "next": "latest",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"

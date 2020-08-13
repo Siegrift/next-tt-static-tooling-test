@@ -1,0 +1,3 @@
+[submodule "tsec"]
+	path = tsec
+	url = https://github.com/googleinterns/tsec.git
