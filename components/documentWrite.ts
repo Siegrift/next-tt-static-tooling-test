@@ -3,6 +3,7 @@
 export const documentWrite = (payload: string) => {
   const constantStr = 'constant payload' as const
   const trustedHTML = window.trustedTypes!.emptyHTML
+  const customObj = { write: (_x: string) => void 0 }
   // try indirect reference
   const doc = document
   const ref = document.write
@@ -14,6 +15,7 @@ export const documentWrite = (payload: string) => {
   ref('constant') // impossible to report, we don't know if's a DOM fn
   ref(constantStr) // impossible to report, we don't know if's a DOM fn
   doc.write(constantStr)
+  customObj.write(payload)
   document.write(trustedHTML) // trusted types
 
   // unsafe
