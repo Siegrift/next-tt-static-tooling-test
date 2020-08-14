@@ -10,3 +10,7 @@ incompatible code paths when project uses [trusted types](https://web.dev/truste
 3. Look into `package.json` for available scripts to run
 
 Project was bootstrapped with `npx create-next-app --example with-typescript next-tt-static-tooling-test`
+
+Trusted types are enforced via custom headers in `next.config.js` and the app uses dynamic imports
+to cancel SSR and execute on client side. We are using report only default policy, see
+`pages/_app.tsx`.
