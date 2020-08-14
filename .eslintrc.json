@@ -13,5 +13,5 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],
-  "rules": {}
+  "rules": { "no-implied-eval": "error", "no-eval": "error" }
 }
