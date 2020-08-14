@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "tsc": "tsc",
-    "tsec": "./tsec/bin/tsec -p tsconfig.json | grep 'TS21228'",
+    "tsec": "./tsec/bin/tsec -p tsconfig.json",
     "eslint": "eslint './**/*.ts' './**/*.tsx'"
   },
   "dependencies": {
