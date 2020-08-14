@@ -2,6 +2,7 @@
 
 export const elementInnerHTML = (payload: string) => {
   const constantStr = 'constant payload' as const
+  const trustedHTML = window.trustedTypes!.emptyHTML
   // try indirect reference
   const ref = document.body
   const customObj = { innerHTML: 'asdasd' }
@@ -16,6 +17,7 @@ export const elementInnerHTML = (payload: string) => {
   customObj.innerHTML = payload
   customObj.innerHTML = 'constant'
   ;(ref as any).innerHTML = 'const'
+  document.body.innerHTML = trustedHTML // trusted types
 
   // unsafe
   document.body.innerHTML = payload

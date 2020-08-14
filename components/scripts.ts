@@ -8,6 +8,7 @@ export const scriptRules = (payload: string) => {
   // there is no way to know whether textNode was created from constant or payload
   const textNode = document.createTextNode(payload)
   const constantStr = 'constant' as const
+  const trustedScript = window.trustedTypes!.emptyScript
   const customObj = { text: 'aaa', textContent: 'bbb', src: 'ccc' }
 
   // unsafe appendChild
@@ -24,6 +25,8 @@ export const scriptRules = (payload: string) => {
   script.textContent = `constant`
   script.textContent = constantStr
   customObj.textContent = payload
+  script.text = trustedScript // trusted types
+  script.textContent = trustedScript // trusted types
   // unsafe text and textContent
   script.text = payload
   script.textContent = payload

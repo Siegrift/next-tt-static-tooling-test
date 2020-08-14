@@ -1,6 +1,7 @@
 // have a look at https://eslint.org/docs/rules/no-eval
 export const _eval = (payload: string) => {
   const constantStr = 'constant payload' as const
+  const trustedScript = window.trustedTypes!.emptyScript
   const ref = eval
   const win = window
   const custom = { eval: (_x: any) => void 0 }
@@ -11,6 +12,7 @@ export const _eval = (payload: string) => {
   eval(constantStr)
   ;(eval as any)(constantStr)
   custom.eval(payload)
+  eval(trustedScript) // trusted types
 
   // unsafe
   eval(payload)
