@@ -24,4 +24,5 @@ export const documentWrite = (payload: string) => {
   ref(payload) // impossible to report, we don't know if's a DOM fn
   ;(document as any).write(payload)
   doc.write(payload)
+  document['write'](payload)
 }

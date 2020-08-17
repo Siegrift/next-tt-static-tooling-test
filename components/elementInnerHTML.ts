@@ -25,4 +25,5 @@ export const elementInnerHTML = (payload: string) => {
   document.body.innerHTML += `decorated ${payload}`
   ref.innerHTML = payload
   ;(ref as any).innerHTML = payload
+  document.body['innerHTML'] = payload
 }

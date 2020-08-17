@@ -19,4 +19,6 @@ export const _eval = (payload: string) => {
   setTimeout(payload, 0)
   setInterval(payload, 0)
   setTimeout(payload)
+  window.setTimeout(payload)
+  window['setTimeout'](payload)
 }

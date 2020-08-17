@@ -20,4 +20,5 @@ export const _eval = (payload: string) => {
   window.eval(payload)
   globalThis.eval(payload)
   win.eval(payload)
+  window['eval'](payload)
 }

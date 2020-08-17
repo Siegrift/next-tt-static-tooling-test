@@ -17,4 +17,5 @@ export const iframeSrcDoc = (payload: string) => {
   elem.srcdoc = `decorated ${payload}`
   elem.srcdoc += `decorated ${payload}`
   ;(elem as any).srcdoc = payload
+  elem['srcdoc'] = payload
 }

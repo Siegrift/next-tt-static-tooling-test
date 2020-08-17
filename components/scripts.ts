@@ -37,4 +37,5 @@ export const scriptRules = (payload: string) => {
   customObj.src = payload
   // unsafe src
   script.src = payload
+  script['src'] = payload
 }
