@@ -1,0 +1,546 @@
+yarn run v1.22.4
+$ cd tsec && npm run build && cd .. && yarn tsec
+
+> tsec@0.0.1 build /home/siegrift/Documents/google/next-tt-static-tooling-test/tsec
+> tsc
+
+$ ./tsec/bin/tsec -p tsconfig.json
+inspecting document.write
+inspecting document.write
+inspecting document.write
+inspecting document.write
+inspecting doc.write
+inspecting customObj.write
+inspecting document.write
+inspecting document.write
+inspecting document.write
+inspecting (document as any).write
+inspecting doc.write
+inspecting document['write']
+inspecting document.body.innerHTML =
+    '<script>console.log("string literal script")</script>'
+inspecting document.body.innerHTML
+inspecting document.body.innerHTML = `constant`
+inspecting document.body.innerHTML
+inspecting document.body.innerHTML = constantStr
+inspecting document.body.innerHTML
+inspecting ref.innerHTML = 'constant'
+inspecting ref.innerHTML
+inspecting ref.innerHTML = constantStr
+inspecting ref.innerHTML
+inspecting customObj.innerHTML = payload
+inspecting customObj.innerHTML
+inspecting customObj.innerHTML = 'constant'
+inspecting customObj.innerHTML
+inspecting (ref as any).innerHTML = 'const'
+inspecting (ref as any).innerHTML
+inspecting document.body.innerHTML = trustedHTML
+inspecting document.body.innerHTML
+inspecting document.body.innerHTML = payload
+inspecting document.body.innerHTML
+inspecting document.body.innerHTML = `decorated ${payload}`
+inspecting document.body.innerHTML
+inspecting document.body.innerHTML += `decorated ${payload}`
+inspecting document.body.innerHTML
+inspecting ref.innerHTML = payload
+inspecting ref.innerHTML
+inspecting (ref as any).innerHTML = payload
+inspecting (ref as any).innerHTML
+inspecting document.body['innerHTML'] = payload
+inspecting document.body['innerHTML']
+inspecting eval
+start matching eval in ref = eval
+SYMBOL [object Object] " eval" eval
+WE HAVE SYMBOL eval
+got FQN eval
+inspecting eval
+start matching eval in eval: (_x: any) => void 0
+SYMBOL [object Object] " eval" eval
+WE HAVE SYMBOL eval
+got FQN custom.eval
+FQN custom.eval doesn't match name eval
+Not the right global name.
+inspecting eval
+start matching eval in eval('<script>console.log("string literal script")</script>')
+SYMBOL [object Object] "
+
+  // safe
+  eval" eval
+WE HAVE SYMBOL eval
+got FQN eval
+inspecting eval
+start matching eval in eval(`constant`)
+SYMBOL [object Object] "
+  eval" eval
+WE HAVE SYMBOL eval
+got FQN eval
+inspecting eval
+start matching eval in eval(constantStr)
+SYMBOL [object Object] "
+  eval" eval
+WE HAVE SYMBOL eval
+got FQN eval
+inspecting eval
+start matching eval in eval as any
+SYMBOL [object Object] "eval" eval
+WE HAVE SYMBOL eval
+got FQN eval
+inspecting eval
+start matching eval in custom.eval
+SYMBOL [object Object] "eval" eval
+WE HAVE SYMBOL eval
+got FQN custom.eval
+FQN custom.eval doesn't match name eval
+Not the right global name.
+inspecting eval
+start matching eval in eval(trustedScript)
+SYMBOL [object Object] "
+  eval" eval
+WE HAVE SYMBOL eval
+got FQN eval
+inspecting eval
+start matching eval in eval(payload)
+SYMBOL [object Object] " // trusted types
+
+  // unsafe
+  eval" eval
+WE HAVE SYMBOL eval
+got FQN eval
+inspecting eval
+start matching eval in ref(payload)(0, eval)
+SYMBOL [object Object] " eval" eval
+WE HAVE SYMBOL eval
+got FQN eval
+inspecting eval
+start matching eval in window.eval
+SYMBOL [object Object] "eval" eval
+WE HAVE SYMBOL eval
+got FQN eval
+inspecting eval
+start matching eval in globalThis.eval
+SYMBOL [object Object] "eval" eval
+WE HAVE SYMBOL eval
+got FQN eval
+inspecting eval
+start matching eval in win.eval
+SYMBOL [object Object] "eval" eval
+WE HAVE SYMBOL eval
+got FQN eval
+WTFFFF inspecting window['eval'] window undefined 'eval'
+start matching window['eval'] in window['eval'](payload)
+SYMBOL undefined "
+  window['eval']" window['eval']
+cannot get symbol
+Not the right global name.
+inspecting elem.srcdoc = '<script>console.log("string literal script")</script>'
+inspecting elem.srcdoc
+inspecting elem.srcdoc = `constant`
+inspecting elem.srcdoc
+inspecting elem.srcdoc = constantStr
+inspecting elem.srcdoc
+inspecting (elem as any).srcdoc = constantStr
+inspecting (elem as any).srcdoc
+inspecting customObj.srcdoc = payload
+inspecting customObj.srcdoc
+inspecting elem.srcdoc = trustedHTML
+inspecting elem.srcdoc
+inspecting elem.srcdoc = payload
+inspecting elem.srcdoc
+inspecting elem.srcdoc = `decorated ${payload}`
+inspecting elem.srcdoc
+inspecting elem.srcdoc += `decorated ${payload}`
+inspecting elem.srcdoc
+inspecting (elem as any).srcdoc = payload
+inspecting (elem as any).srcdoc
+inspecting elem['srcdoc'] = payload
+inspecting elem['srcdoc']
+start matching setTimeout in indirect = setTimeout
+SYMBOL [object Object] " setTimeout" setTimeout
+WE HAVE SYMBOL setTimeout
+got FQN setTimeout
+start matching setTimeout in setTimeout("alert('Hi!');", 0)
+SYMBOL [object Object] "
+
+  // safe
+  setTimeout" setTimeout
+WE HAVE SYMBOL setTimeout
+got FQN setTimeout
+start matching setTimeout in setTimeout("alert('Hi!');")
+SYMBOL [object Object] "
+  setTimeout" setTimeout
+WE HAVE SYMBOL setTimeout
+got FQN setTimeout
+start matching setInterval in setInterval("alert('Hi!');", 0)
+SYMBOL [object Object] "
+  setInterval" setInterval
+WE HAVE SYMBOL setInterval
+got FQN setInterval
+start matching setInterval in setInterval(constantStr, 0)
+SYMBOL [object Object] "
+  setInterval" setInterval
+WE HAVE SYMBOL setInterval
+got FQN setInterval
+start matching setTimeout in setTimeout as any
+SYMBOL [object Object] "setTimeout" setTimeout
+WE HAVE SYMBOL setTimeout
+got FQN setTimeout
+start matching setTimeout in setTimeout(trustedScript)
+SYMBOL [object Object] "
+  setTimeout" setTimeout
+WE HAVE SYMBOL setTimeout
+got FQN setTimeout
+start matching setTimeout in setTimeout(payload, 0)
+SYMBOL [object Object] " // trusted types
+
+  // unsafe
+  setTimeout" setTimeout
+WE HAVE SYMBOL setTimeout
+got FQN setTimeout
+start matching setInterval in setInterval(payload, 0)
+SYMBOL [object Object] "
+  setInterval" setInterval
+WE HAVE SYMBOL setInterval
+got FQN setInterval
+start matching setTimeout in setTimeout(payload)
+SYMBOL [object Object] "
+  setTimeout" setTimeout
+WE HAVE SYMBOL setTimeout
+got FQN setTimeout
+{"n":"\n  window['setTimeout']","par":"\n  window['setTimeout'](payload)","np":"window['setTimeout'](payload)","npp":{"line":21,"character":28},"propAcc":false}
+inspecting script.appendChild
+inspecting script.appendChild
+inspecting script.text = 'constant'
+inspecting script.text
+inspecting script.text = `constant`
+inspecting script.text
+inspecting script.text = constantStr
+inspecting script.text
+inspecting customObj.text = payload
+inspecting customObj.text
+inspecting script.textContent = 'constant'
+inspecting script.textContent
+inspecting script.textContent = `constant`
+inspecting script.textContent
+inspecting script.textContent = constantStr
+inspecting script.textContent
+inspecting customObj.textContent = payload
+inspecting customObj.textContent
+inspecting script.text = trustedScript
+inspecting script.text
+inspecting script.textContent = trustedScript
+inspecting script.textContent
+inspecting script.text = payload
+inspecting script.text
+inspecting script.textContent = payload
+inspecting script.textContent
+inspecting // safe src
+  script.src
+inspecting script.src = 'consant'
+inspecting script.src
+Assigned value ( 'consant') is a compile-time constant.
+inspecting script.src
+inspecting script.src = constantStr
+inspecting script.src
+inspecting customObj.src
+inspecting customObj.src = payload
+inspecting customObj.src
+inspecting // unsafe src
+  script.src
+inspecting script.src = payload
+inspecting script.src
+inspecting script['src']
+inspecting script['src'] = payload
+inspecting script['src']
+inspecting win.trustedTypes.createPolicy
+[96mcomponents/documentWrite.ts[0m:[93m19[0m:[93m18[0m - [91merror[0m[90m TS2345: [0mArgument of type 'TrustedHTML' is not assignable to parameter of type 'string'.
+
+[7m19[0m   document.write(trustedHTML) // trusted types
+[7m  [0m [91m                 ~~~~~~~~~~~[0m
+[96mcomponents/elementInnerHTML.ts[0m:[93m20[0m:[93m3[0m - [91merror[0m[90m TS2322: [0mType 'TrustedHTML' is not assignable to type 'string'.
+
+[7m20[0m   document.body.innerHTML = trustedHTML // trusted types
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/eval.ts[0m:[93m15[0m:[93m8[0m - [91merror[0m[90m TS2345: [0mArgument of type 'TrustedScript' is not assignable to parameter of type 'string'.
+
+[7m15[0m   eval(trustedScript) // trusted types
+[7m  [0m [91m       ~~~~~~~~~~~~~[0m
+[96mcomponents/iframeSrcDoc.ts[0m:[93m13[0m:[93m3[0m - [91merror[0m[90m TS2322: [0mType 'TrustedHTML' is not assignable to type 'string'.
+
+[7m13[0m   elem.srcdoc = trustedHTML // trusted types
+[7m  [0m [91m  ~~~~~~~~~~~[0m
+[96mcomponents/noImpliedEval.ts[0m:[93m16[0m:[93m14[0m - [91merror[0m[90m TS2345: [0mArgument of type 'TrustedScript' is not assignable to parameter of type 'TimerHandler'.
+  Type 'TrustedScript' is missing the following properties from type 'Function': apply, call, bind, prototype, and 5 more.
+
+[7m16[0m   setTimeout(trustedScript) // trusted types
+[7m  [0m [91m             ~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m28[0m:[93m3[0m - [91merror[0m[90m TS2322: [0mType 'TrustedScript' is not assignable to type 'string'.
+
+[7m28[0m   script.text = trustedScript // trusted types
+[7m  [0m [91m  ~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m29[0m:[93m3[0m - [91merror[0m[90m TS2322: [0mType 'TrustedScript' is not assignable to type 'string'.
+
+[7m29[0m   script.textContent = trustedScript // trusted types
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/documentWrite.ts[0m:[93m9[0m:[93m15[0m - [91merror[0m[90m TS21228: [0mDo not call Document#write or Document#writeln, as this can lead to XSS.
+
+[7m9[0m   const ref = document.write
+[7m [0m [91m              ~~~~~~~~~~~~~~[0m
+[96mcomponents/documentWrite.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call Document#write or Document#writeln, as this can lead to XSS.
+
+[7m12[0m   document.write('<script>console.log("string literal script")</script>')
+[7m  [0m [91m  ~~~~~~~~~~~~~~[0m
+[96mcomponents/documentWrite.ts[0m:[93m13[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call Document#write or Document#writeln, as this can lead to XSS.
+
+[7m13[0m   document.write(`constant`)
+[7m  [0m [91m  ~~~~~~~~~~~~~~[0m
+[96mcomponents/documentWrite.ts[0m:[93m14[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call Document#write or Document#writeln, as this can lead to XSS.
+
+[7m14[0m   document.write(constantStr)
+[7m  [0m [91m  ~~~~~~~~~~~~~~[0m
+[96mcomponents/documentWrite.ts[0m:[93m17[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call Document#write or Document#writeln, as this can lead to XSS.
+
+[7m17[0m   doc.write(constantStr)
+[7m  [0m [91m  ~~~~~~~~~[0m
+[96mcomponents/documentWrite.ts[0m:[93m19[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call Document#write or Document#writeln, as this can lead to XSS.
+
+[7m19[0m   document.write(trustedHTML) // trusted types
+[7m  [0m [91m  ~~~~~~~~~~~~~~[0m
+[96mcomponents/documentWrite.ts[0m:[93m22[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call Document#write or Document#writeln, as this can lead to XSS.
+
+[7m22[0m   document.write(payload)
+[7m  [0m [91m  ~~~~~~~~~~~~~~[0m
+[96mcomponents/documentWrite.ts[0m:[93m23[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call Document#write or Document#writeln, as this can lead to XSS.
+
+[7m23[0m   document.write(`decorated ${payload}`)
+[7m  [0m [91m  ~~~~~~~~~~~~~~[0m
+[96mcomponents/documentWrite.ts[0m:[93m26[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call Document#write or Document#writeln, as this can lead to XSS.
+
+[7m26[0m   doc.write(payload)
+[7m  [0m [91m  ~~~~~~~~~[0m
+[96mcomponents/documentWrite.ts[0m:[93m27[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call Document#write or Document#writeln, as this can lead to XSS.
+
+[7m27[0m   document['write'](payload)
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/elementInnerHTML.ts[0m:[93m11[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to Element#innerHTML can result in XSS vulnerabilities.
+
+[7m11[0m   document.body.innerHTML =
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m12[0m     '<script>console.log("string literal script")</script>'
+[7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/elementInnerHTML.ts[0m:[93m13[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to Element#innerHTML can result in XSS vulnerabilities.
+
+[7m13[0m   document.body.innerHTML = `constant`
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/elementInnerHTML.ts[0m:[93m14[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to Element#innerHTML can result in XSS vulnerabilities.
+
+[7m14[0m   document.body.innerHTML = constantStr
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/elementInnerHTML.ts[0m:[93m15[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to Element#innerHTML can result in XSS vulnerabilities.
+
+[7m15[0m   ref.innerHTML = 'constant'
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/elementInnerHTML.ts[0m:[93m16[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to Element#innerHTML can result in XSS vulnerabilities.
+
+[7m16[0m   ref.innerHTML = constantStr
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/elementInnerHTML.ts[0m:[93m20[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to Element#innerHTML can result in XSS vulnerabilities.
+
+[7m20[0m   document.body.innerHTML = trustedHTML // trusted types
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/elementInnerHTML.ts[0m:[93m23[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to Element#innerHTML can result in XSS vulnerabilities.
+
+[7m23[0m   document.body.innerHTML = payload
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/elementInnerHTML.ts[0m:[93m24[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to Element#innerHTML can result in XSS vulnerabilities.
+
+[7m24[0m   document.body.innerHTML = `decorated ${payload}`
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/elementInnerHTML.ts[0m:[93m26[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to Element#innerHTML can result in XSS vulnerabilities.
+
+[7m26[0m   ref.innerHTML = payload
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/elementInnerHTML.ts[0m:[93m28[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to Element#innerHTML can result in XSS vulnerabilities.
+
+[7m28[0m   document.body['innerHTML'] = payload
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/eval.ts[0m:[93m5[0m:[93m15[0m - [91merror[0m[90m TS21228: [0mDo not call eval(), as this can lead to XSS.
+
+[7m5[0m   const ref = eval
+[7m [0m [91m              ~~~~[0m
+[96mcomponents/eval.ts[0m:[93m10[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call eval(), as this can lead to XSS.
+
+[7m10[0m   eval('<script>console.log("string literal script")</script>')
+[7m  [0m [91m  ~~~~[0m
+[96mcomponents/eval.ts[0m:[93m11[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call eval(), as this can lead to XSS.
+
+[7m11[0m   eval(`constant`)
+[7m  [0m [91m  ~~~~[0m
+[96mcomponents/eval.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call eval(), as this can lead to XSS.
+
+[7m12[0m   eval(constantStr)
+[7m  [0m [91m  ~~~~[0m
+[96mcomponents/eval.ts[0m:[93m13[0m:[93m5[0m - [91merror[0m[90m TS21228: [0mDo not call eval(), as this can lead to XSS.
+
+[7m13[0m   ;(eval as any)(constantStr)
+[7m  [0m [91m    ~~~~[0m
+[96mcomponents/eval.ts[0m:[93m15[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call eval(), as this can lead to XSS.
+
+[7m15[0m   eval(trustedScript) // trusted types
+[7m  [0m [91m  ~~~~[0m
+[96mcomponents/eval.ts[0m:[93m18[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not call eval(), as this can lead to XSS.
+
+[7m18[0m   eval(payload)
+[7m  [0m [91m  ~~~~[0m
+[96mcomponents/eval.ts[0m:[93m19[0m:[93m19[0m - [91merror[0m[90m TS21228: [0mDo not call eval(), as this can lead to XSS.
+
+[7m19[0m   ref(payload)(0, eval)(payload)
+[7m  [0m [91m                  ~~~~[0m
+[96mcomponents/eval.ts[0m:[93m20[0m:[93m10[0m - [91merror[0m[90m TS21228: [0mDo not call eval(), as this can lead to XSS.
+
+[7m20[0m   window.eval(payload)
+[7m  [0m [91m         ~~~~[0m
+[96mcomponents/eval.ts[0m:[93m21[0m:[93m14[0m - [91merror[0m[90m TS21228: [0mDo not call eval(), as this can lead to XSS.
+
+[7m21[0m   globalThis.eval(payload)
+[7m  [0m [91m             ~~~~[0m
+[96mcomponents/eval.ts[0m:[93m22[0m:[93m7[0m - [91merror[0m[90m TS21228: [0mDo not call eval(), as this can lead to XSS.
+
+[7m22[0m   win.eval(payload)
+[7m  [0m [91m      ~~~~[0m
+[96mcomponents/iframeSrcDoc.ts[0m:[93m8[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to HTMLIFrameElement#srcdoc can result in XSS vulnerabilities.
+
+[7m8[0m   elem.srcdoc = '<script>console.log("string literal script")</script>'
+[7m [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/iframeSrcDoc.ts[0m:[93m9[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to HTMLIFrameElement#srcdoc can result in XSS vulnerabilities.
+
+[7m9[0m   elem.srcdoc = `constant`
+[7m [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/iframeSrcDoc.ts[0m:[93m10[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to HTMLIFrameElement#srcdoc can result in XSS vulnerabilities.
+
+[7m10[0m   elem.srcdoc = constantStr
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/iframeSrcDoc.ts[0m:[93m13[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to HTMLIFrameElement#srcdoc can result in XSS vulnerabilities.
+
+[7m13[0m   elem.srcdoc = trustedHTML // trusted types
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/iframeSrcDoc.ts[0m:[93m16[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to HTMLIFrameElement#srcdoc can result in XSS vulnerabilities.
+
+[7m16[0m   elem.srcdoc = payload
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/iframeSrcDoc.ts[0m:[93m17[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to HTMLIFrameElement#srcdoc can result in XSS vulnerabilities.
+
+[7m17[0m   elem.srcdoc = `decorated ${payload}`
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/iframeSrcDoc.ts[0m:[93m20[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAssigning directly to HTMLIFrameElement#srcdoc can result in XSS vulnerabilities.
+
+[7m20[0m   elem['srcdoc'] = payload
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/noImpliedEval.ts[0m:[93m7[0m:[93m20[0m - [91merror[0m[90m TS21228: [0mDo not use setTimeout, as calling it with a string argument can cause code-injection security vulnerabilities.
+
+[7m7[0m   const indirect = setTimeout
+[7m [0m [91m                   ~~~~~~~~~~[0m
+[96mcomponents/noImpliedEval.ts[0m:[93m10[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not use setTimeout, as calling it with a string argument can cause code-injection security vulnerabilities.
+
+[7m10[0m   setTimeout("alert('Hi!');", 0)
+[7m  [0m [91m  ~~~~~~~~~~[0m
+[96mcomponents/noImpliedEval.ts[0m:[93m11[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not use setTimeout, as calling it with a string argument can cause code-injection security vulnerabilities.
+
+[7m11[0m   setTimeout("alert('Hi!');")
+[7m  [0m [91m  ~~~~~~~~~~[0m
+[96mcomponents/noImpliedEval.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not use setInterval, as calling it with a string argument can cause code-injection security vulnerabilities.
+
+[7m12[0m   setInterval("alert('Hi!');", 0)
+[7m  [0m [91m  ~~~~~~~~~~~[0m
+[96mcomponents/noImpliedEval.ts[0m:[93m13[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not use setInterval, as calling it with a string argument can cause code-injection security vulnerabilities.
+
+[7m13[0m   setInterval(constantStr, 0)
+[7m  [0m [91m  ~~~~~~~~~~~[0m
+[96mcomponents/noImpliedEval.ts[0m:[93m15[0m:[93m5[0m - [91merror[0m[90m TS21228: [0mDo not use setTimeout, as calling it with a string argument can cause code-injection security vulnerabilities.
+
+[7m15[0m   ;(setTimeout as any)(constantStr)
+[7m  [0m [91m    ~~~~~~~~~~[0m
+[96mcomponents/noImpliedEval.ts[0m:[93m19[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not use setTimeout, as calling it with a string argument can cause code-injection security vulnerabilities.
+
+[7m19[0m   setTimeout(payload, 0)
+[7m  [0m [91m  ~~~~~~~~~~[0m
+[96mcomponents/noImpliedEval.ts[0m:[93m20[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not use setInterval, as calling it with a string argument can cause code-injection security vulnerabilities.
+
+[7m20[0m   setInterval(payload, 0)
+[7m  [0m [91m  ~~~~~~~~~~~[0m
+[96mcomponents/noImpliedEval.ts[0m:[93m21[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not use setTimeout, as calling it with a string argument can cause code-injection security vulnerabilities.
+
+[7m21[0m   setTimeout(payload)
+[7m  [0m [91m  ~~~~~~~~~~[0m
+[96mcomponents/noImpliedEval.ts[0m:[93m22[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not use Window#setTimeout, as calling it with a string argument can cause code-injection security vulnerabilities.
+
+[7m22[0m   window.setTimeout(payload)
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/noImpliedEval.ts[0m:[93m23[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not use Window#setTimeout, as calling it with a string argument can cause code-injection security vulnerabilities.
+
+[7m23[0m   window['setTimeout'](payload)
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m15[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mAppending children to script elements is similar to using eval and can cause code-injection security vulnerabilities.
+
+[7m15[0m   script.appendChild(textNode)
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m16[0m:[93m31[0m - [91merror[0m[90m TS21228: [0mAppending children to script elements is similar to using eval and can cause code-injection security vulnerabilities.
+
+[7m16[0m   const indirectAppendChild = script.appendChild.bind(script)
+[7m  [0m [91m                              ~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m20[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not assign variables to HTMLScriptElement#text or HTMLScriptElement#textContent, as this can lead to XSS.
+
+[7m20[0m   script.text = 'constant'
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m21[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not assign variables to HTMLScriptElement#text or HTMLScriptElement#textContent, as this can lead to XSS.
+
+[7m21[0m   script.text = `constant`
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m22[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not assign variables to HTMLScriptElement#text or HTMLScriptElement#textContent, as this can lead to XSS.
+
+[7m22[0m   script.text = constantStr
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m24[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not assign variables to HTMLScriptElement#text or HTMLScriptElement#textContent, as this can lead to XSS.
+
+[7m24[0m   script.textContent = 'constant'
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m25[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not assign variables to HTMLScriptElement#text or HTMLScriptElement#textContent, as this can lead to XSS.
+
+[7m25[0m   script.textContent = `constant`
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m26[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not assign variables to HTMLScriptElement#text or HTMLScriptElement#textContent, as this can lead to XSS.
+
+[7m26[0m   script.textContent = constantStr
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m28[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not assign variables to HTMLScriptElement#text or HTMLScriptElement#textContent, as this can lead to XSS.
+
+[7m28[0m   script.text = trustedScript // trusted types
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m29[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not assign variables to HTMLScriptElement#text or HTMLScriptElement#textContent, as this can lead to XSS.
+
+[7m29[0m   script.textContent = trustedScript // trusted types
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m31[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not assign variables to HTMLScriptElement#text or HTMLScriptElement#textContent, as this can lead to XSS.
+
+[7m31[0m   script.text = payload
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m32[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not assign variables to HTMLScriptElement#text or HTMLScriptElement#textContent, as this can lead to XSS.
+
+[7m32[0m   script.textContent = payload
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m36[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not assign variables to HTMLScriptElement#src, as this can lead to XSS.
+
+[7m36[0m   script.src = constantStr
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m39[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not assign variables to HTMLScriptElement#src, as this can lead to XSS.
+
+[7m39[0m   script.src = payload
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~[0m
+[96mcomponents/scripts.ts[0m:[93m40[0m:[93m3[0m - [91merror[0m[90m TS21228: [0mDo not assign variables to HTMLScriptElement#src, as this can lead to XSS.
+
+[7m40[0m   script['src'] = payload
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+Found 71 errors.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

@@ -7,6 +7,7 @@
     "start": "next start",
     "tsc": "tsc",
     "tsec": "./tsec/bin/tsec -p tsconfig.json",
+    "fresh-tsec": "cd tsec && npm run build && cd .. && yarn tsec",
     "eslint": "eslint './**/*.ts' './**/*.tsx'"
   },
   "dependencies": {

@@ -38,4 +38,5 @@ export const scriptRules = (payload: string) => {
   // unsafe src
   script.src = payload
   script['src'] = payload
+  script[`src`] = payload
 }
