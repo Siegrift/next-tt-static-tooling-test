@@ -1,11 +1,26 @@
 // NOTE: omitting tests for element.outerHTML
 
+class TrustedHTMLType {
+  private constructor() {} // To prevent instantiting with 'new'.
+  private brand = true; // To prevent structural typing.
+
+  toString(){ return 'str'}
+}
+
 export const elementInnerHTML = (payload: string) => {
   const constantStr = 'constant payload' as const
   const trustedHTML = window.trustedTypes!.emptyHTML
   // try indirect reference
   const ref = document.body
   const customObj = { innerHTML: 'asdasd' }
+  const fakeTrustedHTML = 'str' as any as TrustedHTMLType
+
+  class TrustedHTML {
+    private brand = true;
+  }
+
+  const nameClash = 'str' as any as TrustedHTML
+  document.body.innerHTML = nameClash as unknown as string // trusted types
 
   // safe
   document.body.innerHTML =
@@ -17,7 +32,8 @@ export const elementInnerHTML = (payload: string) => {
   customObj.innerHTML = payload
   customObj.innerHTML = 'constant'
   ;(ref as any).innerHTML = 'const'
-  document.body.innerHTML = trustedHTML // trusted types
+  document.body.innerHTML = trustedHTML as unknown as string // trusted types
+  document.body.innerHTML = fakeTrustedHTML as unknown as string // trusted types
 
   // unsafe
   document.body.innerHTML = payload
