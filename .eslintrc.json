@@ -3,7 +3,8 @@
     "browser": true,
     "es2020": true
   },
-  "extends": ["plugin:no-unsanitized/DOM"],
+  // disable eslint plugin so we only see tsec violations
+  // "extends": ["plugin:no-unsanitized/DOM"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -12,6 +13,12 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
-  "rules": { "no-implied-eval": "error", "no-eval": "error" }
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-implied-eval": "error",
+    "no-eval": "error"
+  }
 }
