@@ -5174,7 +5174,7 @@ ts-pnp@^1.1.6:
 
 "tsec@https://github.com/Siegrift/tsec.git#lang-plugin":
   version "0.0.1"
-  resolved "https://github.com/Siegrift/tsec.git#d355a54c8cd0d6741266dc1cba1cf77f241c23b7"
+  resolved "https://github.com/Siegrift/tsec.git#468fa4e00ff371fac9b6a6ae9012f709272e1d4f"
   dependencies:
     "@types/node" "^13.13.5"
 
